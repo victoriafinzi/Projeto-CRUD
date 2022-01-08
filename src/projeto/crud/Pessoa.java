@@ -3,6 +3,7 @@ package projeto.crud;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -11,10 +12,9 @@ public class Pessoa {
     private String nome; 
     private String telefone; 
     private String dataNasc;
-    //aparecer quando listar as pessoas cadastradas
     private LocalDate dataCadastro;
     private LocalDate dataAlteracao;
-    SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+    DateTimeFormatter formatador =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
     
     public Pessoa(String nome, String telefone, String dataNasc, LocalDate dataCadastro, LocalDate dataAlteracao ){
         setNome(nome);
@@ -57,16 +57,16 @@ public class Pessoa {
         return dataCadastro;
     }
 
-    public LocalDate setDataCadastro(LocalDate dataCadastro) {
-        return dataCadastro;
+    public void setDataCadastro(LocalDate dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
 
     public LocalDate getDataAlteracao() {
         return dataAlteracao;
     }
 
-    public LocalDate setDataAlteracao(LocalDate dataAlteracao) {
-        return dataAlteracao;
+    public void setDataAlteracao(LocalDate dataAlteracao) {
+        this.dataAlteracao = dataAlteracao;
     }
 
     //essa parada aqui é reconhecida pelo for e ai serve como o seu listarPessoa()

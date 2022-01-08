@@ -10,19 +10,26 @@ import projeto.crud.ControleIndividuos;
 
 public class ProjetoCRUD {
 
-    public static void main(String[] args) {
+    public void Inicializar() {
+        //inicialização da nossa classe Scanner
         int opcao;
         Scanner apresentacao;
+        apresentacao = new Scanner(System.in);
+        
+        //atributos usados
         String nome, telefone, dataNasc;
         float notaFinal;
         LocalDate dataCadastro, dataAlteracao;
-        ControleIndividuos ci = new ControleIndividuos();
+        
+        //construtores
         Pessoa novaPessoa = new Pessoa();
         Aluno novoAluno = new Aluno();
+        ControleIndividuos ci = new ControleIndividuos();
         
-        apresentacao = new Scanner(System.in);
+        
         
         do{
+            //menu de interação com o usuário
             System.out.println("********************************************************");
             System.out.println("*   DIGITE O NÚMERO DE QUAL OPERAÇÃO DESEJA EFETUAR    *");
             System.out.println("********************************************************");
@@ -35,6 +42,7 @@ public class ProjetoCRUD {
             System.out.print("Digite aqui a operação:");
         
             opcao = apresentacao.nextInt();
+            
             //função que limpa o buffer
             apresentacao.nextLine();
             
@@ -54,8 +62,7 @@ public class ProjetoCRUD {
                     //construção de novo aluno e pessoa para inserção dos dados
                     dataCadastro = LocalDate.now();
                     dataAlteracao = LocalDate.now();
-                    novoAluno = new Aluno(nome, telefone, dataNasc, notaFinal, dataCadastro, dataAlteracao); //lenbra de por de volta dos dois outros trem
-                   
+                    novoAluno = new Aluno(nome, telefone, dataNasc, notaFinal, dataCadastro, dataAlteracao);
                     novaPessoa = new Pessoa (nome, telefone, dataNasc, dataCadastro, dataAlteracao);
                     
                     //função que faz a diferenciação entre salvar Pessoa ou Aluno
@@ -76,8 +83,8 @@ public class ProjetoCRUD {
                    //primeiro lista os Alunos e Pessoas já criadas para o usuário saber qual destes ele deseja editar 
                    ci.listarAluno();
                    ci.listarPessoa();
-                   //menu de escolha entre Aluno ou Pessoa
-                   System.out.println("Você deseja alterar aluno ou pessoa: "); //alterar aqui pra 1 ou 2
+                   //menu usuário escolhe se irá editar Aluno ou Pessoa
+                   System.out.println("Você deseja alterar aluno ou pessoa: "); 
                    String altIndividuo = apresentacao.next();
                    //função que diferencia entre aluno ou pessoa
                    if ("aluno".equals(altIndividuo)){
@@ -88,7 +95,7 @@ public class ProjetoCRUD {
                        opcao = 3;
                    }
                    //menu que mostra qual a opção que o usuário deseja efetuar
-                   System.out.println("Informe com base na numeração, qual aluno você deseja alterar: ");
+                   System.out.println("Informe com base na numeração, qual individuo você deseja alterar: ");
                    int numIndividuo = apresentacao.nextInt();
                    apresentacao.nextLine();
                    if ("aluno".equals(altIndividuo)){
@@ -121,7 +128,6 @@ public class ProjetoCRUD {
                        aluno.setnotaFinal(notaFinal);                          
                    }else{
                        System.out.println("Digite um numero válido");
-                       //ver como fazer voltar pro menu menu
                    }}else if("pessoa".equals(altIndividuo)){
                        Pessoa pessoa = (Pessoa) ci.listaDePessoas.get(numIndividuo - 1);
                         System.out.println("Informe com base na numeração, qual atributo deseja alterar: ");
@@ -183,6 +189,6 @@ public class ProjetoCRUD {
                 default:
                     System.out.println("\nOpção inválida!Digite um dos números acima.");
             }
-        }while(opcao != 0); //aqui ele sempre vai fazer o que estiver no "DO"
+        }while(opcao != 0); //aqui ele sempre vai fazer o que estiver no "DO" automaticamente
     }
 }
