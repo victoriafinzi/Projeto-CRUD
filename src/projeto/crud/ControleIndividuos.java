@@ -29,7 +29,7 @@ public class ControleIndividuos {
         }
     
     public void listarPessoa(){
-        System.out.println("Lista de Pessoas");
+        System.out.println("Lista de Pessoas:");
         //aqui a primeira pessoa adicionada será a 1
         int incremento = 1;
         for (Pessoa pessoaNaLista : listaDePessoas){

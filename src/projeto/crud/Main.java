@@ -1,12 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package projeto.crud;
 
 /**
  *
- * @author victo
+ * @author Victória Castro
+ * Projeto CRUD desenvolvido para o processo de seleção do +praTI.
+ * 07/01/2022
  */
 public class Main {
     

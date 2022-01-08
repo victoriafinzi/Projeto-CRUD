@@ -71,8 +71,8 @@ public class Pessoa {
 
     //essa parada aqui é reconhecida pelo for e ai serve como o seu listarPessoa()
     public String toString(){
-        return "Nome:" + getNome() + ", " + "Telefone:" + telefone + ", " + "Data de nascimento:" + dataNasc + ", " + "Data de cadastro:" + formatador.format(getDataCadastro()) + ", " + "Data da Última alteração:" + ", " + formatador.format(getDataAlteracao());
-                //terminar amanhã, formatar isso daqui depois formatar lá no negocio do projeto etc
+        return "Nome:" + getNome() + ", " + "Telefone:" + getTelefone() + ", " + "Data de nascimento:" + getDataNasc() + ", " + "Data de cadastro:" + formatador.format(getDataCadastro()) + ", " + "Data da Última alteração:" + ", " + formatador.format(getDataAlteracao());
+                
     }
     
 }

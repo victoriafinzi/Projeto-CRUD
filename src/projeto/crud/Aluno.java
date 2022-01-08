@@ -31,7 +31,7 @@ public class Aluno extends Pessoa {
     
 
     public String toString(){
-        return "Nome:" + this.getNome() + ", " + "Telefone:" + this.getTelefone() + ", " + "Data de nascimento:" + this.getDataNasc() + ", " + "Nota final:" + notaFinal + "Data de cadastro:" + formatador.format(this.getDataCadastro()) + "Data da Última alteração:" + formatador.format(this.getDataAlteracao());
+        return "Nome:" + this.getNome() + ", " + "Telefone:" + this.getTelefone() + ", " + "Data de nascimento:" + this.getDataNasc() + ", " + "Nota final:" + notaFinal + ", " + "Data de cadastro:" + formatador.format(this.getDataCadastro()) + ", " + "Data da Última alteração:" + formatador.format(this.getDataAlteracao());
     }
 
 }

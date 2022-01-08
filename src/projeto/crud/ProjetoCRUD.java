@@ -74,7 +74,7 @@ public class ProjetoCRUD {
                     break;
                     
                 case 2:
-                   //aqui lista tanto os individuos inseridos como Alunos ou Pessoas
+                   //lista todos os individuos inseridos como Alunos ou Pessoas
                    ci.listarAluno();
                    ci.listarPessoa();                    
                     break;
@@ -87,9 +87,9 @@ public class ProjetoCRUD {
                    System.out.println("Você deseja alterar aluno ou pessoa: "); 
                    String altIndividuo = apresentacao.next();
                    //função que diferencia entre aluno ou pessoa
-                   if ("aluno".equals(altIndividuo)){
+                   if (("aluno".equals(altIndividuo)) || ("Aluno".equals(altIndividuo) || ("ALUNO".equals(altIndividuo)))){
                         ci.listarAluno();
-                   }else if("pessoa".equals(altIndividuo)){
+                   }else if(("pessoa".equals(altIndividuo)) || ("Pessoa".equals(altIndividuo)) || ("PESSOA".equals(altIndividuo))){
                        ci.listarPessoa();
                    }else{
                        opcao = 3;
@@ -109,6 +109,7 @@ public class ProjetoCRUD {
                         System.out.println("**********************************");
                     int alterarOpcao = apresentacao.nextInt();
                     apresentacao.nextLine();
+                    //faz a diferenciação para a escolha de qual atributo que irá ser editado
                        if (alterarOpcao == 1){
                        System.out.println("Nome: ");
                        nome = apresentacao.nextLine();
@@ -163,9 +164,9 @@ public class ProjetoCRUD {
                     System.out.println("Você deseja deletar um aluno ou pessoa: ");
                      String delIndividuo = apresentacao.next();
                    //função que diferencia entre aluno ou pessoa
-                   if ("aluno".equals(delIndividuo)){
-                       ci.listarAluno();
-                   }else if("pessoa".equals(delIndividuo)){
+                   if (("aluno".equals(delIndividuo)) || ("Aluno".equals(delIndividuo) || ("ALUNO".equals(delIndividuo)))){
+                        ci.listarAluno();
+                   }else if(("pessoa".equals(delIndividuo)) || ("Pessoa".equals(delIndividuo)) || ("PESSOA".equals(delIndividuo))){
                        ci.listarPessoa();
                    }else{
                        System.out.println("Digite um aluno ou pessoa");
@@ -174,9 +175,10 @@ public class ProjetoCRUD {
                    System.out.println("Informe com base na numeração, qual Aluno/Pessoa você deseja deletar: ");
                    int delNumIndividuo = apresentacao.nextInt();
                    apresentacao.nextLine();
-                   if ("aluno".equals(delIndividuo)){
+                   //função que remove o individuo escolhido
+                   if (("aluno".equals(delIndividuo)) || ("Aluno".equals(delIndividuo) || ("ALUNO".equals(delIndividuo)))){
                        ci.listaDeAlunos.remove(delNumIndividuo - 1);
-                   }else if("pessoa".equals(delIndividuo)){
+                   }else if(("pessoa".equals(delIndividuo)) || ("Pessoa".equals(delIndividuo)) || ("PESSOA".equals(delIndividuo))){
                        ci.listaDePessoas.remove(delNumIndividuo - 1);}
                     break;
                 case 5:
@@ -185,7 +187,7 @@ public class ProjetoCRUD {
                     //se for passado um número diferente de 0 (como 1 ou -1) o compilador entende que irá terminar o programa com algum erro ou mensagem.
                     System.exit(0);
                     break;
-                //arrumar para caso digite uma letra, palavra ou número aleatório.
+                //o default é chamado caso adicionem um número que não existe
                 default:
                     System.out.println("\nOpção inválida!Digite um dos números acima.");
             }
